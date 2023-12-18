@@ -1,10 +1,14 @@
-import Login from '../login/Login';
-import Menu from '../menu/Menu';
-import Search from '../search/Search';
+import { useState } from 'react';
+
+import Login from './login/Login';
+import Menu from './menu/Menu';
+import Search from './search/Search';
 import './header.scss'
 
 
 function Header() {
+
+   const [closeMenu, setCloseMenu] = useState(false);
    return (
       <header className="header">
          <div className="header__container">
@@ -26,8 +30,19 @@ function Header() {
                      </a>
                   </div>
                </div>
-               <div className="header__adaptive-menu">
-                  <Menu />
+               {
+                  closeMenu ?
+                     <div className="header__adaptiv-body header__adaptiv-body_close" >
+                        <div className="header__adaptiv-body-close" onClick={() => setCloseMenu(!closeMenu)}></div>
+                        <Menu />
+                     </div>
+                     :
+                     <div className="header__adaptiv-body">
+                        <Menu />
+                     </div>
+               }
+               <div className="header__burger header__adaptive-menu_burger" onClick={() => setCloseMenu(!closeMenu)}>
+                  <span className='header__burger-span'></span>
                </div>
                <Search />
                <Login />

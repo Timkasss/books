@@ -4,6 +4,7 @@
 .menu {
    &__list {
       display: flex;
+      flex-wrap: wrap;
       @include adaptiv-value('gap', 25, 10, 0);
    }
 
