@@ -77,9 +77,29 @@ body {
    line-height: 1; */
 }
 
+// .wrapper {
+//    display: flex;
+//    flex-direction: column;
+// }
+
+// .main {
+//    flex: 1 1 auto;
+// }
+
 
 [class*="__container"] {
    max-width: 1430px;
    margin: 0px auto;
    padding: 0px 15px;
+}
+
+.section_title {
+   @include adaptiv-value('font-size', 65, 32, 0);
+   font-weight: 900;
+}
+
+.section_filter {
+   color: rgba(255, 255, 255, 0.35);
+   @include adaptiv-value('font-size', 18, 15, 0);
+   font-weight: 700;
 }

@@ -4,6 +4,7 @@
    position: fixed;
    @include adaptiv-value('top', 20, 11, 0);
    width: 100%;
+   z-index: 10;
 
    &__container {}
 
@@ -74,6 +75,8 @@
          justify-content: center;
          padding-top: 25px;
          transform: translateX(-3%);
+         position: relative;
+         z-index: -1;
       }
 
       .login {
@@ -85,7 +88,7 @@
       display: none;
    }
 
-   @media (max-width:$phone) {
+   @media (max-width:$tablet) {
       &__adaptive {
          display: flex;
          align-items: center;
@@ -104,7 +107,7 @@
       &__adaptive-menu_burger {
          display: block;
          width: 29px;
-         height: 27px;
+         height: 28px;
          background-color: #fff;
          position: relative;
          border-radius: 5px;

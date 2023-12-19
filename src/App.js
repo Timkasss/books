@@ -1,10 +1,10 @@
-import Header from './components/header/Header';
 import './fonts.css';
+import Home from './pages/Home';
 
 function App() {
   return (
     <div className="wrapper">
-      <Header />
+      <Home />
     </div>
   );
 }
