@@ -1,0 +1,55 @@
+@import '../../index.scss';
+
+.what-read {
+   @include adaptiv-value('padding-top', 80, 30, 0);
+   //padding-bottom: 100px;
+
+   &__title {
+      @include adaptiv-value('padding-bottom', 70, 20, 0);
+   }
+
+   &__books {}
+
+   &__books-wrapper {
+      display: flex;
+   }
+
+   .Myswiper {
+      padding-bottom: 50px;
+   }
+
+   .swiper-pagination {
+      @include adaptiv-value('padding-top', 55, 30, 0);
+   }
+
+
+   .swiper-button-prev {
+      color: rgb(250, 246, 28);
+      --swiper-navigation-top-offset: 91%;
+      --swiper-navigation-sides-offset: 45%;
+   }
+
+   .swiper-button-next {
+      color: rgb(250, 246, 28);
+      --swiper-navigation-top-offset: 91%;
+      --swiper-navigation-sides-offset: 45%;
+   }
+
+   @media (max-width:$laptop) {
+      .swiper-button-prev {
+         --swiper-navigation-top-offset: 88%;
+         --swiper-navigation-sides-offset: 45%;
+      }
+
+      .swiper-button-next {
+         --swiper-navigation-top-offset: 88%;
+         --swiper-navigation-sides-offset: 45%;
+      }
+   }
+
+}
+
+.swiper-pagination {
+   display: flex;
+   justify-content: center;
+}
