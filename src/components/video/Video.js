@@ -9,17 +9,17 @@ import poster4 from '../../img/video/video4.png';
 function Video() {
 
    const [video, setVideo] = useState(0);
-   console.log(video)
+
    const videos = [
       {
          img: poster1,
          name: 'Мулан',
-         link: 'https://www.youtube.com/watch?v=jG85y1Vf0Ng',
+         link: '../../img/video/video.mp4',
       },
       {
          img: poster2,
          name: 'Форсаж 9',
-         link: 'https://www.youtube.com/watch?v=jG85y1Vf0Ng',
+         link: './video.mp4',
       },
       {
          img: poster3,
@@ -119,6 +119,7 @@ function Video() {
                                        poster={item.img}>
                                        <source
                                           src={item.link}
+                                          type="video/mp4"
                                        />
                                     </video>
                                  </div>

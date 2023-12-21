@@ -1,5 +1,5 @@
 $laptop: 1200px;
-$tablet: 768px;
+$tablet: 767.9px;
 $phone: 320px;
 
 
@@ -102,4 +102,5 @@ body {
    color: rgba(255, 255, 255, 0.35);
    @include adaptiv-value('font-size', 18, 15, 0);
    font-weight: 700;
+   cursor: pointer;
 }

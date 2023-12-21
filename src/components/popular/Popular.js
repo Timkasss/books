@@ -20,7 +20,7 @@ function Popular() {
                               nameFilter.map((item, index) => {
                                  return (
                                     <li className="polupar__filter-item" key={index}>
-                                       <a href="#" className={`popular__filter-link section_filter ${pick === index ? 'popular__filter_pick' : ''}`} onClick={() => setPick(index)}>{item}</a>
+                                       <a className={`popular__filter-link section_filter ${pick === index ? 'popular__filter_pick' : ''}`} onClick={() => setPick(index)}>{item}</a>
                                     </li>
                                  )
                               })
