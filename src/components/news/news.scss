@@ -58,6 +58,7 @@
    &__main-title {
       @include adaptiv-value('font-size', 45, 20, 0);
       font-weight: 900;
+      @include adaptiv-value('padding-bottom', 25, 0, 0);
    }
 
    &__main-text {

@@ -1,5 +1,6 @@
 @import '../../../index.scss';
 
+
 .poster-hover {
    position: relative;
 
@@ -47,6 +48,7 @@
    flex-direction: column;
    gap: 5px;
    position: relative;
+   max-width: 344px;
 
    &__poster-wrapper {}
 
