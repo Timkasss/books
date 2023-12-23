@@ -3,8 +3,6 @@
 
 
 .popular {
-   @include adaptiv-value('padding-top', 210, 86, 0);
-
 
    &__header-wrapper {
       display: flex;
@@ -34,6 +32,24 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 15px;
       row-gap: 25px;
+   }
+
+   @media (min-width: 769px) {
+      &__films-container .film-poster:nth-child(n+9) {
+         display: none;
+      }
+   }
+
+   @media (max-width: $tablet) {
+      &__films-container .film-poster:nth-child(n+10) {
+         display: none;
+      }
+   }
+
+   @media (max-width: 425px) {
+      &__films-container .film-poster:nth-child(n+7) {
+         display: none;
+      }
    }
 
    &__wrapper-link {

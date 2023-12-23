@@ -15,7 +15,7 @@ function Email() {
                      </div>
                      <div className="email__checkbox-wrapper">
                         <input id='ckeckbox' type="checkbox" className='email__checkbox' />
-                        <label className='email__checkbox-label' for="ckeckbox">
+                        <label className='email__checkbox-label' htmlFor="ckeckbox">
                            Соглашаюсь на условия
                         </label>
                         <a href="#" className='email__checkbox-link'>политики конфиденциальности</a>

@@ -95,22 +95,3 @@
 
 
 }
-
-@media (min-width: 1720px) {
-   .film-poster:nth-child(n+9) {
-      display: none;
-   }
-}
-
-
-@media (max-width: $tablet) {
-   .film-poster:nth-child(n+10) {
-      display: none;
-   }
-}
-
-@media (max-width: 425px) {
-   .film-poster:nth-child(n+7) {
-      display: none;
-   }
-}

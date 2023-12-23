@@ -19,9 +19,9 @@ function Home() {
             <Person />
             <News />
             <Education />
-            <Email />
-            <Footer />
          </main>
+         <Email />
+         <Footer />
       </>
    );
 }

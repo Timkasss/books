@@ -41,7 +41,8 @@ a:visited {
 
 }
 
-ul li {
+ul,
+ol li {
    list-style: none;
 }
 
@@ -73,18 +74,25 @@ body {
 }
 
 #root {
-   /* height: 100%;
-   line-height: 1; */
+   height: 100%;
+   //line-height: 1;
+
 }
 
-// .wrapper {
-//    display: flex;
-//    flex-direction: column;
-// }
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   min-height: 100%;
+}
 
-// .main {
-//    flex: 1 1 auto;
-// }
+.main {
+   @include adaptiv-value('padding-top', 150, 86, 0);
+   flex: 1 1 auto;
+}
+
+.test {
+   //height: 100px;
+}
 
 
 [class*="__container"] {
