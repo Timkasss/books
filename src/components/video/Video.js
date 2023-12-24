@@ -5,6 +5,9 @@ import poster1 from '../../img/video/video1.png';
 import poster2 from '../../img/video/video2.png';
 import poster3 from '../../img/video/video3.png';
 import poster4 from '../../img/video/video4.png';
+import ReactPlayer from 'react-player';
+
+import vid from '../../img/video/video.mp4';
 
 function Video() {
 
@@ -14,12 +17,13 @@ function Video() {
       {
          img: poster1,
          name: 'Мулан',
-         link: '../../img/video/video.mp4',
+         link: vid,
       },
+
       {
-         img: poster2,
-         name: 'Форсаж 9',
-         link: './video.mp4',
+         img: poster4,
+         name: 'Тихое место 2',
+         link: 'https://www.youtube.com/watch?v=reN_okp2Gq4',
       },
       {
          img: poster3,
@@ -27,14 +31,14 @@ function Video() {
          link: 'https://www.youtube.com/watch?v=jG85y1Vf0Ng',
       },
       {
-         img: poster4,
-         name: 'Тихое место 2',
-         link: 'https://www.youtube.com/watch?v=jG85y1Vf0Ng',
-      },
-      {
          img: poster1,
          name: 'Мулан',
          link: 'https://www.youtube.com/watch?v=jG85y1Vf0Ng',
+      },
+      {
+         img: poster2,
+         name: 'Форсаж 9',
+         link: vid,
       },
    ]
 
@@ -98,13 +102,23 @@ function Video() {
                         </div>
                      </footer>
                   </div>
-                  <video className="video__big-video"
-                     controls
-                     poster={videos[video].img}>
-                     <source
-                        src={videos[video].link}
-                        type="video/mp4" />
-                  </video>
+                  <div className="video__wrapper-big">
+                     <ReactPlayer
+                        url={videos[video].link}
+                        className='video__big-video'
+                        width='100%'
+                        height='100%'
+                        controls
+                        config={{
+                           file: {
+                              attributes: {
+                                 poster: videos[video].img
+                              }
+                           }
+                        }}
+                     />
+                  </div>
+
                </section>
                <div className="video__list-wrapper">
                   <div className="video__list-container">
@@ -114,14 +128,15 @@ function Video() {
 
                               <article className="video__item" key={index} >
                                  <div className="video__item-wrapper" onClick={() => setVideo(index)}>
-                                    <video className="video__small-video"
+                                    <img className="video__small-video" src={item.img} alt="poster" />
+                                    {/* <video className="video__small-video"
                                        controls
                                        poster={item.img}>
                                        <source
                                           src={item.link}
                                           type="video/mp4"
                                        />
-                                    </video>
+                                    </video> */}
                                  </div>
                                  <h2 className="video__item-title">{item.name}</h2>
                               </article>

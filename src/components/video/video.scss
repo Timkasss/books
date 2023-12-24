@@ -50,6 +50,7 @@
 
    &__big-video-wrapper {}
 
+
    &__main-video {
       display: flex;
       flex-direction: column;
@@ -142,10 +143,14 @@
 
    &__dislike-count {}
 
+   &__wrapper-big {
+      height: 765px;
+   }
+
    &__big-video {
       order: 0;
       width: 100%;
-      max-height: 765px;
+      // max-height: 765px;
       height: 100%;
       object-fit: cover;
       border-radius: 10px;

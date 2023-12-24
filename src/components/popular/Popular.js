@@ -34,6 +34,7 @@ function Popular() {
                </header>
             </div>
             <div className="popular__films-container">
+               {/* <Poster />
                <Poster />
                <Poster />
                <Poster />
@@ -44,8 +45,7 @@ function Popular() {
                <Poster />
                <Poster />
                <Poster />
-               <Poster />
-               <Poster />
+               <Poster /> */}
             </div>
             <div className="popular__wrapper-link">
                <a href="#" className="popular__link">Вся бібліотека</a>

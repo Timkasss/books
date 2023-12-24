@@ -50,7 +50,10 @@
    position: relative;
    max-width: 344px;
 
-   &__poster-wrapper {}
+   &__poster-wrapper {
+      max-height: 465px;
+      height: 100%;
+   }
 
    &__poster {
       max-width: 100%;
