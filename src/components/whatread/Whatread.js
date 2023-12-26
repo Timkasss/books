@@ -6,7 +6,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/scss';
 import 'swiper/css/navigation';
+
+import { BooksContext } from '../context';
+import { useContext } from 'react';
 function Whatread() {
+
+   const { dataBooks, setDataBooks } = useContext(BooksContext);
+
+   const slide = dataBooks.slice(0, 9);
    return (
       <section className="what-read">
          <div className="what-read__container">
@@ -47,16 +54,11 @@ function Whatread() {
                }}
                className='Myswiper'
             >
-               <SwiperSlide><Poster /></SwiperSlide>
-               <SwiperSlide><Poster /></SwiperSlide>
-               <SwiperSlide><Poster /></SwiperSlide>
-               <SwiperSlide><Poster /></SwiperSlide>
-               <SwiperSlide><Poster /></SwiperSlide>
-               <SwiperSlide><Poster /></SwiperSlide>
-               <SwiperSlide><Poster /></SwiperSlide>
-               <SwiperSlide><Poster /></SwiperSlide>
-               <SwiperSlide><Poster /></SwiperSlide>
-               <SwiperSlide><Poster /></SwiperSlide>
+               {
+                  slide.map(book => (
+                     <SwiperSlide key={book.id} ><Poster books={book} /></SwiperSlide>
+                  ))
+               }
                <div className="swiper-button-prev"></div>
                <div className="swiper-button-next"></div>
                <div className="swiper-pagination"></div>

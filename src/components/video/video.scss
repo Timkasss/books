@@ -144,7 +144,7 @@
    &__dislike-count {}
 
    &__wrapper-big {
-      height: 765px;
+      @include adaptiv-value('height', 765, 235, 0);
    }
 
    &__big-video {

@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import './popular.scss';
+import { BooksContext } from '../context';
 import Poster from './poster/Poster';
-
 function Popular() {
    const [pick, setPick] = useState(0);
-
+   const { dataBooks, setDataBooks } = useContext(BooksContext);
+   const books = dataBooks.slice(0, 9);
    let nameFilter = ['Все', 'Боевики', 'Приключения', 'Комедии', 'Фантастика', 'Триллеры', 'Драма'];
    return (
       <section className="popular">
@@ -34,18 +35,11 @@ function Popular() {
                </header>
             </div>
             <div className="popular__films-container">
-               {/* <Poster />
-               <Poster />
-               <Poster />
-               <Poster />
-               <Poster />
-               <Poster />
-               <Poster />
-               <Poster />
-               <Poster />
-               <Poster />
-               <Poster />
-               <Poster /> */}
+               {
+                  books.map(book => (
+                     <Poster books={book} key={book.id} />
+                  ))
+               }
             </div>
             <div className="popular__wrapper-link">
                <a href="#" className="popular__link">Вся бібліотека</a>

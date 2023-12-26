@@ -1,6 +1,7 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useContext } from 'react';
 
 import Poster from '../popular/poster/Poster';
+import { BooksContext } from '../context';
 import './education.scss';
 import { Navigation, Pagination } from 'swiper/modules';
 import { register } from 'swiper/element/bundle';
@@ -10,6 +11,9 @@ register();
 
 
 function Education() {
+   const { dataBooks, setDataBooks } = useContext(BooksContext);
+   const slides = dataBooks.slice(0, 9);
+
    const swiperElRef = useRef(null);
    useEffect(() => {
       //swiper parameters
@@ -75,13 +79,17 @@ function Education() {
                      <div className="swipper-button-next"></div>
                      <div className="swipper-button-prev"></div>
                   </div>
-
+                  {
+                     slides.map(book => (
+                        <swiper-slide key={book.id}><Poster books={book} /></swiper-slide>
+                     ))
+                  }
+                  {/* <swiper-slide><Poster /></swiper-slide>
                   <swiper-slide><Poster /></swiper-slide>
                   <swiper-slide><Poster /></swiper-slide>
                   <swiper-slide><Poster /></swiper-slide>
                   <swiper-slide><Poster /></swiper-slide>
-                  <swiper-slide><Poster /></swiper-slide>
-                  <swiper-slide><Poster /></swiper-slide>
+                  <swiper-slide><Poster /></swiper-slide> */}
                   {/* <div className="swiper-pagination"></div> */}
                </swiper-container>
 

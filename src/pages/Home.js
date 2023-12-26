@@ -11,17 +11,13 @@ import Whatread from '../components/whatread/Whatread';
 function Home() {
    return (
       <>
-         <Header />
-         <main className="main">
-            <Popular />
-            <Video />
-            <Whatread />
-            <Person />
-            <News />
-            <Education />
-         </main>
-         <Email />
-         <Footer />
+         <Popular />
+         <Video />
+         <Whatread />
+         <Person />
+         <News />
+         <Education />
+
       </>
    );
 }
