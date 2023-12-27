@@ -84,13 +84,6 @@ function Education() {
                         <swiper-slide key={book.id}><Poster books={book} /></swiper-slide>
                      ))
                   }
-                  {/* <swiper-slide><Poster /></swiper-slide>
-                  <swiper-slide><Poster /></swiper-slide>
-                  <swiper-slide><Poster /></swiper-slide>
-                  <swiper-slide><Poster /></swiper-slide>
-                  <swiper-slide><Poster /></swiper-slide>
-                  <swiper-slide><Poster /></swiper-slide> */}
-                  {/* <div className="swiper-pagination"></div> */}
                </swiper-container>
 
             </div>

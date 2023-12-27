@@ -51,17 +51,12 @@ function Library() {
                   }
 
                </div>
-
-
                <Pagination
                   currentPage={currentPage}
                   totalCount={dataBooks.length}
                   pageSize={PageSize}
                   onPageChange={page => setCurrentPage(page)}
                />
-
-
-
             </section>
          </div>
       </>

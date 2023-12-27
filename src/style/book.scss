@@ -1,0 +1,145 @@
+@import '../index.scss';
+
+.quotes-block {
+   @include adaptiv-value('padding-top', 70, 30, 0);
+   display: flex;
+   flex-direction: column;
+   @include adaptiv-value('gap', 45, 30, 0);
+
+   &__title {
+      @include adaptiv-value('padding-bottom', 50, 35, 0);
+   }
+}
+
+.quote {
+   border-radius: 10px;
+   background: #191E2E;
+   position: relative;
+   padding-top: 60px;
+   @include adaptiv-value('padding-bottom', 40, 25, 0);
+   padding-left: 55px;
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+
+   &__name {
+      @include adaptiv-value('font-size', 18, 16, 0);
+      font-weight: 600;
+      order: 1;
+   }
+
+   &__text {
+      @include adaptiv-value('font-size', 17, 15, 0);
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.2;
+      order: 0;
+   }
+}
+
+.quote::before {
+   content: '';
+   position: absolute;
+   top: -10px;
+   left: 50px;
+   background: url('../img/book-card/paws.svg') no-repeat center center/cover;
+   @include adaptiv-value('width', 200, 130, 0);
+   @include adaptiv-value('height', 50, 40, 0);
+}
+
+.similer-books {
+   @include adaptiv-value('padding-top', 80, 40, 0);
+
+   &__title {
+      text-align: center;
+      @include adaptiv-value('padding-bottom', 65, 20, 0);
+   }
+}
+
+.book-reviews {
+   @include adaptiv-value('padding-top', 80, 40, 0);
+
+   &__title-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 45px;
+   }
+
+
+   &__add {
+      border-radius: 10px;
+      background: #3657CB;
+      @include adaptiv-value('font-size', 16, 12, 0);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include adaptiv-value('width', 214, 154, 0);
+      @include adaptiv-value('height', 63, 51, 0);
+      cursor: pointer;
+   }
+
+   &__header {
+      display: flex;
+      flex-wrap: wrap;
+      @include adaptiv-value('gap', 17, 12, 0);
+      @include adaptiv-value('padding-bottom', 40, 20, 0);
+   }
+
+   &__pick {
+      @include adaptiv-value('font-size', 20, 15, 0);
+      font-weight: 600;
+      border-radius: 10px;
+      background: #1B2133;
+      padding-left: 20px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-right: 20px;
+      @include adaptiv-value('padding-left', 20, 10, 0);
+      @include adaptiv-value('padding-top', 15, 10, 0);
+      @include adaptiv-value('padding-bottom', 15, 10, 0);
+      @include adaptiv-value('padding-right', 20, 10, 0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include adaptiv-value('gap', 40, 20, 0);
+      cursor: pointer;
+   }
+
+   &__pick-count {
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      font-size: 15px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   &__pick-count_color_blue {
+      background: rgba(54, 87, 203, 0.30);
+      color: #3657CB;
+   }
+
+   &__pick-count_color_green {
+      background: rgba(87, 208, 67, 0.38);
+      color: #57D043;
+   }
+
+   &__pick-count_color_red {
+      background: #642C36;
+      color: #E04141;
+   }
+
+   &__pick-count_color_yellow {
+      color: #FFF065;
+      background: rgba(255, 240, 101, 0.30);
+   }
+
+   &__pick-count_color_brown {
+      color: #57D043;
+      background: #326339;
+   }
+}
