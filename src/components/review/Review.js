@@ -6,7 +6,6 @@ function Review() {
    return (
       <article className="review">
          <header className="review__header">
-
             <div className="review__img-wrapper">
                <img src={avatar} alt="avatar" className="review__img" />
             </div>
@@ -22,8 +21,14 @@ function Review() {
                <div className="review__writer review_name">Письменики<span className='review__count'>(11)</span></div>
             </div>
             <div className="review__grade-pick">
-               <div className="review__grade-like"><span className='review__count-like'>3</span></div>
-               <div className="review__grade-dislike"><span className='review__count-dislike'>0</span></div>
+               <div className="review__grade-like-wrapper">
+                  <div className="review__grade-like"></div>
+                  <span className='review__count-like'>3</span>
+               </div>
+               <div className="review__grade-dislike-wrapper">
+                  <div className="review__grade-dislike"></div>
+                  <span className='review__count-dislike'>0</span>
+               </div>
             </div>
 
          </header>

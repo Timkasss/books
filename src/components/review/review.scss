@@ -6,25 +6,50 @@
    background: #191E2E;
    @include adaptiv-value('padding', 45, 20, 0);
 
-
-
    &__header {
-      display: flex;
+      display: grid;
+      grid-template-areas:
+         'avatar name grade'
+         'avatar links grade';
+      grid-template-columns: 10% 80% 10%;
       align-items: center;
       @include adaptiv-value('padding-bottom', 45, 20, 0);
    }
+
+   @media (max-width:1100px) {
+      &__header {
+         grid-template-areas:
+            'avatar name grade'
+            'links links links';
+         row-gap: 20px;
+         grid-template-columns: 15% 70% 10%;
+      }
+   }
+
+   @media (max-width:$tablet) {
+      &__header {
+         grid-template-areas:
+            'avatar name name'
+            'grade grade grade'
+            'links links links';
+         row-gap: 20px;
+         grid-template-columns: auto;
+      }
+   }
+
 
    &__header-name-kind {
       display: flex;
       align-items: center;
       gap: 20px;
+      grid-area: name;
    }
 
    &__img-wrapper {
       @include adaptiv-value('width', 115, 57, 0);
       @include adaptiv-value('height', 115, 57, 0);
       border-radius: 50%;
-      @include adaptiv-value('margin-right', 26, 16, 0);
+      grid-area: avatar;
    }
 
    &__img {
@@ -48,8 +73,9 @@
 
    &__person-data {
       display: flex;
+      flex-wrap: wrap;
       @include adaptiv-value('gap', 20, 15, 0);
-      padding-left: 135px;
+      grid-area: links;
    }
 
    .review_name {
@@ -61,29 +87,88 @@
 
    &__grade-pick {
       display: flex;
+      gap: 8px;
+      grid-area: grade;
    }
 
    &__grade-like {
+      border-radius: 10px;
+      background: #1B2133;
+      @include adaptiv-value('width', 59, 38, 0);
+      @include adaptiv-value('height', 59, 38, 0);
+      position: relative;
+      cursor: pointer;
+   }
+
+   &__grade-like:hover {
+      background: #37405a;
+   }
+
+   &__grade-like::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       background: url('../../img/book/like.svg') no-repeat center center /cover;
       @include adaptiv-value('width', 26, 17, 0);
       @include adaptiv-value('height', 26, 17, 0);
    }
 
    &__grade-dislike {
+      border-radius: 10px;
+      background: #1B2133;
+      @include adaptiv-value('width', 59, 38, 0);
+      @include adaptiv-value('height', 59, 38, 0);
+      position: relative;
+      cursor: pointer;
+   }
+
+   &__grade-dislike::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       background: url('../../img/book/dislike.svg') no-repeat center center /cover;
       @include adaptiv-value('width', 26, 17, 0);
       @include adaptiv-value('height', 26, 17, 0);
    }
 
+   &__grade-like-wrapper,
+   &__grade-dislike-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+   }
+
+   @media (max-width:$tablet) {
+
+      &__grade-like-wrapper,
+      &__grade-dislike-wrapper {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+      }
+   }
+
+   &__grade-dislike:hover {
+      background: #37405a;
+   }
+
    &__count-like {
       font-size: 15px;
       font-weight: 400;
+
    }
 
    &__count-dislike {
       font-size: 15px;
       font-weight: 400;
+
    }
+
 
    &__title-wrapper {
       display: flex;
@@ -113,9 +198,22 @@
       justify-content: space-between;
    }
 
+
+
    &__comment-link-wrapper {
       display: flex;
       gap: 50px;
+   }
+
+   @media (max-width:$tablet) {
+      &__footer {
+         flex-wrap: wrap;
+         gap: 20px;
+      }
+
+      &__comment-link-wrapper {
+         gap: 20px;
+      }
    }
 
    &__footer-commeting {
@@ -124,6 +222,7 @@
       text-decoration-line: underline;
       position: relative;
       padding-left: 25px;
+      cursor: pointer;
    }
 
    &__footer-commeting::before {
@@ -144,6 +243,7 @@
       position: relative;
       color: #FFF;
       padding-left: 25px;
+      white-space: nowrap;
    }
 
    &__footer-link::before {
@@ -165,6 +265,7 @@
       text-decoration-line: underline;
       position: relative;
       padding-left: 25px;
+      cursor: pointer;
    }
 
    &__foter-complain:before {

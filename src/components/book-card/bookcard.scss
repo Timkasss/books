@@ -39,6 +39,8 @@
       border-radius: 50%;
    }
 
+
+
    &__description {
       font-size: 15px;
       font-weight: 500;
@@ -46,7 +48,8 @@
    }
 
    &__wrapper-img {
-      flex: 0 0 35%;
+      @include adaptiv-value('width', 395, 225, 0);
+      @include adaptiv-value('height', 539, 300, 0);
    }
 
    &__img {
@@ -58,21 +61,100 @@
    }
 
    &__main-block {
-      display: flex;
-      flex-direction: row-reverse;
-      @include adaptiv-value('gap', 50, 15, 0);
+      display: grid;
+      @include adaptiv-value('column-gap', 50, 10, 0);
+      row-gap: 20px;
+      grid-template-areas:
+         'image crumbs'
+         'image title'
+         'image subtitle'
+         'image rating'
+         'image description'
+         'image links'
+         'image .';
    }
 
-   &__content {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+   &__wraper-crumbs {
+      grid-area: crumbs;
+   }
+
+   &__title {
+      grid-area: title;
+   }
+
+   &__sub-title {
+      grid-area: subtitle;
+   }
+
+   &__wrapper-img {
+      grid-area: image;
+   }
+
+   &__rating {
+      grid-area: rating;
+   }
+
+   &__description {
+      grid-area: description;
+   }
+
+   &__wrapper-links {
+      grid-area: links;
+   }
+
+   @media (max-width:$tablet) {
+      &__main-block {
+         display: grid;
+         grid-template-areas:
+            'crumbs crumbs'
+            'title title'
+            'subtitle subtitle'
+            'image rating'
+            'description description'
+            'links links';
+      }
+
+      &__wraper-crumbs {
+         grid-area: crumbs;
+      }
+
+      &__title {
+         grid-area: title;
+      }
+
+      &__sub-title {
+         grid-area: subtitle;
+      }
+
+      &__wrapper-img {
+         grid-area: image;
+      }
+
+      &__rating {
+         grid-area: rating;
+      }
+
+      &__description {
+         grid-area: description;
+      }
+
+      &__wrapper-links {
+         grid-area: links;
+      }
    }
 
    &__wrapper-links {
       display: flex;
       gap: 35px;
       align-items: center;
+   }
+
+   @media (max-width:$tablet) {
+      &__wrapper-links {
+         display: flex;
+         flex-direction: column;
+         align-items: start;
+      }
    }
 
    &__read {
@@ -197,7 +279,7 @@
          color: rgba(255, 255, 255, 0.90);
          @include adaptiv-value('font-size', 18, 12, 0);
          font-weight: 600;
-         padding-right: 40px;
+         @include adaptiv-value('padding-right', 40, 20, 0);
          padding-bottom: 20px;
       }
 
@@ -208,7 +290,7 @@
          font-weight: 400;
          text-decoration-line: underline;
          padding-bottom: 20px;
-         padding-right: 40px;
+         @include adaptiv-value('padding-right', 40, 20, 0);
       }
    }
 }

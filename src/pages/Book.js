@@ -3,7 +3,7 @@ import { useContext, useRef, useEffect } from 'react';
 import '../style/book.scss';
 import BookCard from '../components/book-card/BookCard';
 import Poster from '../components/popular/poster/Poster';
-
+import avatar from '../img/book/avatar-comment.png';
 import { Navigation, Pagination } from 'swiper/modules';
 import { register } from 'swiper/element/bundle';
 import Review from '../components/review/Review';
@@ -125,6 +125,46 @@ function Book() {
                   <span className="book-reviews__point"></span>
                </div>
             </section>
+            <div className="write-comment">
+               <div className="write-comment__person">
+                  <div className="write-comment__avatar">
+                     <img src={avatar} alt="avatar" className="write-comment__img" />
+                  </div>
+                  <div className="write-comment__person-data">
+                     <h1 className="write-comment__person-name">Евгений Батиков</h1>
+                     <a href="#" className="write-comment__person-link">Мой профиль</a>
+                  </div>
+               </div>
+               <form action="#" className="write-comment__form">
+                  <div className="write-comment__form-header">
+                     <input type="text" className="write-comment__input-title" placeholder='Заголовок Вашої рецензії' />
+                     <select name="grade" id="grade-pick" className="write-comment__grade-pick">
+                        <option value="good">Позитивна рецензія</option>
+                        <option value="middle">Нейтральна рецензія</option>
+                        <option value="bad">Негативна рецензія</option>
+                     </select>
+                  </div>
+                  <div className="write-comment__kind-text">
+                     <button id="bold" className='write-comment_but-style'>Ж</button>
+                     <button id="italics" className='write-comment_but-style'>К</button>
+                     <button id="emphasized" className='write-comment_but-style'>А</button>
+                  </div>
+                  <textarea name="comment" id="write-comment" rows="10"></textarea>
+                  <div className="write-comment__form-footer">
+                     <div className="write-comment__checkbox-wrapper">
+                        <input id='write-ckeckbox' type="checkbox" className='write-comment__checkbox' />
+                        <label className='write-comment__checkbox-label' htmlFor="write-ckeckbox">
+                           Соглашаюсь на условия
+                        </label>
+                        <a href="#" className='write-comment__checkbox-link'>политики конфиденциальности</a>
+                     </div>
+                     <div className="write-comment__buttons">
+                        <button className="write-comment__pre-view">Попередній перегляд</button>
+                        <button className="write-comment__sent">Відправити</button>
+                     </div>
+                  </div>
+               </form>
+            </div>
          </div>
       </>
 
