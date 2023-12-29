@@ -1,0 +1,2 @@
+export const url = 'https://www.googleapis.com/books/v1/volumes?q=education&maxResults=40&filter=ebooks&key=AIzaSyCuF3fjVbdjpRNwBz3TGavhUJ5axwWORRA'
+export const url2 = 'https://www.googleapis.com/books/v1/volumes?q=fantacy&maxResults=40&filter=ebooks&key=AIzaSyCuF3fjVbdjpRNwBz3TGavhUJ5axwWORRA'
