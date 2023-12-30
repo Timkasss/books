@@ -6,6 +6,9 @@ import person from '../img/page-person/person.png';
 import award1 from '../img/page-person/award1.png';
 import award2 from '../img/page-person/award2.png';
 import award3 from '../img/page-person/award3.png';
+import BookPerson from '../components/book-person/BookPerson';
+import Gallery from '../components/gallery/Gallery';
+import Comment from '../components/comment/Comment';
 
 function PagePerson() {
    const [pickInfa, setPickInfa] = useState(true);
@@ -129,6 +132,9 @@ function PagePerson() {
                </div>
             </div>
          </div>
+         <BookPerson />
+         <Gallery />
+         <Comment />
       </div>
    )
 }

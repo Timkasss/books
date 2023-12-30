@@ -80,10 +80,11 @@
    }
 
    &__header-title {
-      @include adaptiv-value('font-size', 65, 32, 0);
+      @include adaptiv-value('font-size', 65, 25, 0);
       font-weight: 900;
       white-space: nowrap;
       padding-bottom: 15px;
+      word-wrap: break-word;
    }
 
    &__header-subtitle {
