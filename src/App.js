@@ -11,6 +11,7 @@ import Footer from './components/footer/Footer';
 import PagePerson from './pages/PagePerson';
 
 import { url, url2 } from './api.js';
+import Personal from './pages/Personal.js';
 function App() {
   const [dataBooks, setDataBooks] = useState([])
   useEffect(() => {
@@ -35,7 +36,8 @@ function App() {
           {/* <Home /> */}
           {/* <Library /> */}
           {/* <Book /> */}
-          <PagePerson />
+          {/* <PagePerson /> */}
+          <Personal />
         </main>
         <Email />
         <Footer />
