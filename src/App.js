@@ -12,6 +12,10 @@ import PagePerson from './pages/PagePerson';
 
 import { url, url2 } from './api.js';
 import Personal from './pages/Personal.js';
+import PageNews from './pages/PageNews.js';
+import Article from './pages/Article.js';
+import Feedback from './pages/Feedback.js';
+import Error from './pages/Error.js';
 function App() {
   const [dataBooks, setDataBooks] = useState([])
   useEffect(() => {
@@ -37,7 +41,11 @@ function App() {
           {/* <Library /> */}
           {/* <Book /> */}
           {/* <PagePerson /> */}
-          <Personal />
+          {/* <Personal /> */}
+          {/* <PageNews /> */}
+          {/* <Article /> */}
+          {/* <Feedback /> */}
+          <Error />
         </main>
         <Email />
         <Footer />
