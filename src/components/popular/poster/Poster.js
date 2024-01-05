@@ -1,8 +1,8 @@
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 import './poster.scss';
 
-function Poster({ books }) {
+function Poster({ books, index }) {
    const [hover, setHover] = useState(false)
 
    let poster = books.volumeInfo.imageLinks.thumbnail;
@@ -18,7 +18,7 @@ function Poster({ books }) {
          >
             {hover &&
                <div className="film-poster__hover-background poster-hover__background">
-                  <a href='#' className="film-poster__hover-button poster-hover__button">Карточка книги</a>
+                  <Link to={`/library/${index}`} className="film-poster__hover-button poster-hover__button">Карточка книги</Link>
                </div>
             }
             <img src={poster} alt="poster" className="film-poster__poster" />

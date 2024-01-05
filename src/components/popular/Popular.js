@@ -1,8 +1,10 @@
 import { useState, useContext } from 'react';
 import './popular.scss';
 import { BooksContext } from '../context';
+import { Link } from 'react-router-dom';
 import Poster from './poster/Poster';
 function Popular() {
+
    const [pick, setPick] = useState(0);
    const { dataBooks, setDataBooks } = useContext(BooksContext);
    const books = dataBooks.slice(0, 9);
@@ -36,13 +38,13 @@ function Popular() {
             </div>
             <div className="popular__films-container">
                {
-                  books.map(book => (
-                     <Poster books={book} key={book.id} />
+                  books.map((book) => (
+                     <Poster books={book} key={book.id} index={book.id} />
                   ))
                }
             </div>
             <div className="popular__wrapper-link">
-               <a href="#" className="popular__link">Вся бібліотека</a>
+               <Link to={'/library'} className="popular__link">Вся бібліотека</Link>
             </div>
          </div>
       </section>

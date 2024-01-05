@@ -1,7 +1,4 @@
 import Education from '../components/education/Education';
-import Email from '../components/email/Email';
-import Footer from '../components/footer/Footer';
-import Header from '../components/header/Header';
 import News from '../components/news/News';
 import Person from '../components/person/Person';
 import Popular from '../components/popular/Popular';

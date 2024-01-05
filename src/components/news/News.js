@@ -1,4 +1,5 @@
 import './news.scss';
+import { Link } from 'react-router-dom';
 import preview from '../../img/news/preview.png';
 import imgsmall from '../../img/news/preview.png';
 function News() {
@@ -7,7 +8,7 @@ function News() {
          <div className="news__container">
             <div className="news__wrapper">
                <h1 className="news__title section_title">Последние новости</h1>
-               <a href="#" className="news__link">Все новости</a>
+               <Link to={'/news'} className="news__link">Все новости</Link>
             </div>
             <div className="news__block-wrapper">
                <section className="news__main">

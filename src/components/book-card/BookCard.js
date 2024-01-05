@@ -1,20 +1,24 @@
 import './bookcard.scss';
 import BreadCrumbs from '../bread-crumbs/BreadCrumbs';
+import { useParams } from 'react-router-dom';
 
 function BookCard({ databook }) {
-   const number = databook[0];
-   const name = number.volumeInfo.title;
-   const surName = number.volumeInfo.subtitle;
-   const rating = number.volumeInfo.averageRating;
-   const description = number.volumeInfo.description;
-   const image = number.volumeInfo.imageLinks.thumbnail;
-   const year = number.volumeInfo.publishedDate;
-   const country = number.saleInfo.country;
-   const genre = number.volumeInfo.categories[0];
+   const { userId } = useParams();
+
+   const book = databook.find(item => item.id === userId)
+
+   const name = book.volumeInfo.title;
+   const surName = book.volumeInfo.subtitle;
+   const rating = book.volumeInfo.averageRating;
+   const description = book.volumeInfo.description;
+   const image = book.volumeInfo.imageLinks.thumbnail;
+   const year = book.volumeInfo.publishedDate;
+   const country = book.saleInfo.country;
+   const genre = book.volumeInfo.categories[0];
    const seria = "";
-   const publishing = number.volumeInfo.publisher;
-   const language = number.volumeInfo.language;
-   const pageCount = number.volumeInfo.pageCount;
+   const publishing = book.volumeInfo.publisher;
+   const language = book.volumeInfo.language;
+   const pageCount = book.volumeInfo.pageCount;
    const format = 'pdf';
 
 

@@ -3,7 +3,8 @@ import { useState } from 'react';
 import Login from './login/Login';
 import Menu from './menu/Menu';
 import Search from './search/Search';
-import './header.scss'
+import './header.scss';
+
 
 
 function Header() {

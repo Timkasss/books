@@ -1,5 +1,5 @@
 import './footer.scss';
-
+import { Link } from 'react-router-dom';
 function Footer() {
    return (
       <div className="footer">
@@ -23,12 +23,12 @@ function Footer() {
             </header>
             <nav className="footer__menu">
                <ul className="footer__list">
-                  <li className="footer__item"><a href="#" className="footer__link">Афиша</a></li>
-                  <li className="footer__item"><a href="#" className="footer__link">Новости</a></li>
-                  <li className="footer__item"><a href="#" className="footer__link">Персоны</a></li>
-                  <li className="footer__item"><a href="#" className="footer__link">Рейтинги</a></li>
+                  <li className="footer__item"><Link to={'/'} className="footer__link">Головна</Link></li>
+                  <li className="footer__item"><Link to={'/library'} className="footer__link">Бібліотека</Link></li>
+                  <li className="footer__item"><Link to={'/news'} className="footer__link">Статті</Link></li>
+                  {/* <li className="footer__item"><a href="#" className="footer__link">Рейтинги</a></li>
                   <li className="footer__item"><a href="#" className="footer__link">Рецензии</a></li>
-                  <li className="footer__item"><a href="#" className="footer__link">Каталог фильмов</a></li>
+                  <li className="footer__item"><a href="#" className="footer__link">Каталог фильмов</a></li> */}
                </ul>
             </nav>
             <footer className="footer__footer">

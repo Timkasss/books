@@ -15,7 +15,6 @@ import BreadCrumbs from "../components/bread-crumbs/BreadCrumbs";
 
 function Library() {
    const { dataBooks, setDataBooks } = useContext(BooksContext)
-
    let PageSize = 12;
    const [currentPage, setCurrentPage] = useState(1);
    const currentTableData = useMemo(() => {
@@ -46,7 +45,7 @@ function Library() {
                <div className="library__books-wrapper">
                   {
                      currentTableData.map((item) => (
-                        <Poster books={item} key={item.id} />
+                        <Poster books={item} key={item.id} index={item.id} />
                      ))
                   }
 
