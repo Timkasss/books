@@ -88,7 +88,7 @@ function App() {
               <Route path="/news" element={<PageNews />} />
               <Route path="/news/id" element={<Article />} />
               <Route path="/feedback" element={<Feedback />} />
-              <Route path="/error" element={<Error />} />
+              <Route path="*" element={<Error />} />
             </Routes>
             <div className="top" onClick={scrollTop}></div>
           </main>
