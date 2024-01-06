@@ -1,7 +1,7 @@
 import BreadCrumbs from '../components/bread-crumbs/BreadCrumbs';
 import '../style/pagenews.scss';
 import Pagination from '../components/pagination/Pagination';
-
+import { Link } from 'react-router-dom';
 import article from '../img/news/articleOne.png';
 import article1 from '../img/news/articleTwo.png';
 import { useState, useMemo } from "react";
@@ -25,9 +25,9 @@ function PageNews() {
                <article className="page-news__item">
                   <div className="page-news__item-content">
                      <h2 className="page-news__item-title">
-                        <a href="#" className="page-news__article-link">
+                        <Link to={'/news/id'} className="page-news__article-link">
                            Фильм недели: «Спутник» — sci-fi про Чужого в позднем СССР, мечтающий быть чем-то большим
-                        </a>
+                        </Link>
                      </h2>
 
                      <p className="page-news__item-type">Новость</p>
@@ -37,16 +37,16 @@ function PageNews() {
                         <div className="page-news__item-comment">9</div>
                      </div>
                   </div>
-                  <a href="#" className="page-news__article-link">
+                  <Link to={'/news/id'} className="page-news__article-link">
                      <img src={article} alt="poster" className="page-news__image" />
-                  </a>
+                  </Link>
                </article>
                <article className="page-news__item">
                   <div className="page-news__item-content">
                      <h2 className="page-news__item-title">
-                        <a href="#" className="page-news__article-link">
+                        <Link to={'/news/id'} className="page-news__article-link">
                            Джеймс Ганн назвал 10 самых недооцененных сериалов последних лет
-                        </a>
+                        </Link>
                      </h2>
                      <p className="page-news__item-type">Новость</p>
                      <div className="page-news__item-data">
@@ -55,16 +55,16 @@ function PageNews() {
                         <div className="page-news__item-comment">9</div>
                      </div>
                   </div>
-                  <a href="#" className="page-news__article-link">
+                  <Link to={'/news/id'} className="page-news__article-link">
                      <img src={article1} alt="poster" className="page-news__image" />
-                  </a>
+                  </Link>
                </article>
                <article className="page-news__item">
                   <div className="page-news__item-content">
                      <h2 className="page-news__item-title">
-                        <a href="#" className="page-news__article-link">
+                        <Link to={'/news/id'} className="page-news__article-link">
                            Тизер-постер фильма «Оторви и выбрось»: Режиссер «Папа, сдохни» готовит приключенческую комедию
-                        </a>
+                        </Link>
                      </h2>
                      <p className="page-news__item-type">Новость</p>
                      <div className="page-news__item-data">
@@ -73,16 +73,16 @@ function PageNews() {
                         <div className="page-news__item-comment">9</div>
                      </div>
                   </div>
-                  <a href="#" className="page-news__article-link">
+                  <Link to={'/news/id'} className="page-news__article-link">
                      <img src={article} alt="poster" className="page-news__image" />
-                  </a>
+                  </Link>
                </article>
                <article className="page-news__item">
                   <div className="page-news__item-content">
                      <h2 className="page-news__item-title">
-                        <a href="#" className="page-news__article-link">
+                        <Link to={'/news/id'} className="page-news__article-link">
                            Шоураннер «Жизней матрешки» займется сериалом по «Звездным войнам»
-                        </a>
+                        </Link>
                      </h2>
                      <p className="page-news__item-type">Новость</p>
                      <div className="page-news__item-data">
@@ -91,9 +91,9 @@ function PageNews() {
                         <div className="page-news__item-comment">9</div>
                      </div>
                   </div>
-                  <a href="#" className="page-news__article-link">
+                  <Link to={'/news/id'} className="page-news__article-link">
                      <img src={article1} alt="poster" className="page-news__image" />
-                  </a>
+                  </Link>
                </article>
                <article className="page-news__item">
                   <div className="page-news__item-content">
@@ -282,8 +282,8 @@ function PageNews() {
                pageSize={PageSize}
                onPageChange={page => setCurrentPage(page)}
             />
-         </div>
-      </section>
+         </div >
+      </section >
    )
 }
 

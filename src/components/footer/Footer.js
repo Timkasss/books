@@ -26,9 +26,9 @@ function Footer() {
                   <li className="footer__item"><Link to={'/'} className="footer__link">Головна</Link></li>
                   <li className="footer__item"><Link to={'/library'} className="footer__link">Бібліотека</Link></li>
                   <li className="footer__item"><Link to={'/news'} className="footer__link">Статті</Link></li>
-                  {/* <li className="footer__item"><a href="#" className="footer__link">Рейтинги</a></li>
-                  <li className="footer__item"><a href="#" className="footer__link">Рецензии</a></li>
-                  <li className="footer__item"><a href="#" className="footer__link">Каталог фильмов</a></li> */}
+                  <li className="footer__item"><Link to={'/authors'} className="footer__link">Автори</Link></li>
+                  <li className="footer__item"><Link to={'/feedback'} className="footer__link">Зворотній зв'язок</Link></li>
+                  {/* <li className="footer__item"><a href="#" className="footer__link">Каталог фильмов</a></li> */}
                </ul>
             </nav>
             <footer className="footer__footer">

@@ -90,12 +90,14 @@ body {
    flex: 1 1 auto;
 }
 
+
 .top {
    position: fixed;
-   right: 50px;
-   bottom: 40px;
-   width: 73px;
-   height: 73px;
+   z-index: 11;
+   @include adaptiv-value('right', 50, 20, 0);
+   @include adaptiv-value('bottom', 40, 20, 0);
+   @include adaptiv-value('width', 73, 33, 0);
+   @include adaptiv-value('height', 73, 33, 0);
    border-radius: 10px;
    cursor: pointer;
    background: url('./img/top.png') no-repeat center center/cover;

@@ -1,8 +1,12 @@
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 import './login.scss';
+import avatar from '../../../img/header/avatar.png';
 
 function Login() {
+
+   const [logIn, setLogIn] = useState(true);
+   const [logOpen, setLogOpen] = useState(false);
    const [modelClose, setModelClose] = useState(false);
 
    const [modelRegistation, setModelRegistation] = useState(false);
@@ -42,8 +46,40 @@ function Login() {
    }
    return (
       <div className="login">
+         {
+            !logIn ? <div className="login__button-model" onClick={() => setModelClose(!modelClose)}>Увійти</div> :
+               <div className="log-in">
+                  <div className={`log-in__header ${logOpen ? 'header-arrow' : ''}`} onClick={() => setLogOpen(!logOpen)}>
+                     <div className="log-in__name">Евгений</div>
+                     <div className="log-in__photo-wrapper">
+                        <img src={avatar} alt="your avatar" className="log-in__photo" />
+                     </div>
+                  </div>
+                  {
+                     logOpen &&
+                     <nav className="log-in__menu">
+                        <ul className="log-in__list">
+                           <li className="log-in__item">
+                              <Link to={'/mypage'} className="log-in__link">Мой профиль</Link>
+                           </li>
+                           <li className="log-in__item">
+                              <a href="#" className="log-in__link">Настройки</a>
+                           </li>
+                           <li className="log-in__item">
+                              <a href="#" className="log-in__link">Рецензии</a>
+                           </li>
+                           <li className="log-in__item">
+                              <a href="#" className="log-in__link">Комметраии</a>
+                           </li>
+                           <li className="log-in__item">
+                              <a href="#" className="log-in__link">Выход</a>
+                           </li>
+                        </ul>
+                     </nav>
+                  }
+               </div>
+         }
 
-         <div className="login__button-model" onClick={() => setModelClose(!modelClose)}>Увійти</div>
          {
             modelClose &&
             <>

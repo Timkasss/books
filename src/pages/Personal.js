@@ -52,13 +52,13 @@ function Personal() {
                   </li>
                </ul>
             </nav>
-            {/* {
+            {
                setting ? <Settings /> : <Profile set={setSetting} />
-            } */}
+            }
             {/* <Friends /> */}
             {/* <MyReviews /> */}
             {/* <ListBooks /> */}
-            <ListPerson />
+            {/* <ListPerson /> */}
 
          </div>
       </div>
