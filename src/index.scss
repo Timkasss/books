@@ -86,7 +86,7 @@ body {
 }
 
 .main {
-   @include adaptiv-value('padding-top', 150, 86, 0);
+   @include adaptiv-value('padding-top', 70, 20, 0);
    flex: 1 1 auto;
 }
 

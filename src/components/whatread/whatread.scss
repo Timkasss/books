@@ -8,7 +8,6 @@
       @include adaptiv-value('padding-bottom', 70, 20, 0);
    }
 
-   &__books {}
 
    &__books-wrapper {
       display: flex;
@@ -20,32 +19,66 @@
 
    .swiper-pagination {
       @include adaptiv-value('padding-top', 55, 30, 0);
+      user-select: none;
+   }
+
+   .swiper-button-prev {
+      visibility: hidden;
+      position: relative;
+      @include adaptiv-value('--swiper-navigation-top-offset', 108, 83, 0);
+      --swiper-navigation-sides-offset: 45%;
    }
 
 
-   .swiper-button-prev {
-      color: rgb(250, 246, 28);
-      --swiper-navigation-top-offset: 91%;
-      --swiper-navigation-sides-offset: 45%;
+   .swiper-button-prev::before {
+      content: '';
+      position: absolute;
+      user-select: none;
+      visibility: visible;
+      background: url('../../img/video/prev.svg') no-repeat center center/cover;
+      width: 40px;
+      height: 20px;
    }
 
    .swiper-button-next {
-      color: rgb(250, 246, 28);
-      --swiper-navigation-top-offset: 91%;
-      --swiper-navigation-sides-offset: 45%;
+      visibility: hidden;
+      position: relative;
+      @include adaptiv-value('--swiper-navigation-top-offset', 85, 60, 0);
+      --swiper-navigation-sides-offset: -53%;
    }
 
-   @media (max-width:$laptop) {
+   .swiper-button-next::after {
+      content: '';
+      position: absolute;
+      user-select: none;
+      visibility: visible;
+      background: url('../../img/video/prev.svg') no-repeat center center/cover;
+      transform: rotate(-180deg);
+      width: 40px;
+      height: 20px;
+
+   }
+
+   @media (max-width:1000px) {
       .swiper-button-prev {
-         --swiper-navigation-top-offset: 88%;
-         --swiper-navigation-sides-offset: 45%;
+         --swiper-navigation-sides-offset: 40%;
       }
 
       .swiper-button-next {
-         --swiper-navigation-top-offset: 88%;
-         --swiper-navigation-sides-offset: 45%;
+         --swiper-navigation-sides-offset: -56%;
       }
    }
+
+   @media (max-width:600px) {
+      .swiper-button-prev {
+         --swiper-navigation-sides-offset: 30%;
+      }
+
+      .swiper-button-next {
+         --swiper-navigation-sides-offset: -61%;
+      }
+   }
+
 
 }
 

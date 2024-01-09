@@ -46,6 +46,22 @@ function App() {
     { id: 19, name: 'Лев Миколайович Толстой' },
     { id: 20, name: 'Антон Павлович Чехов' }
   ];
+
+  const [viewArrow, setViewArrow] = useState(false);
+
+  window.addEventListener('scroll', () => {
+    let hei = document.documentElement.getBoundingClientRect().top;
+    let top = document.documentElement.offsetHeight;
+    if (-top > hei) {
+      setViewArrow(true)
+    } else {
+      setViewArrow(false)
+    }
+  })
+
+
+
+
   function scrollTop() {
     window.scrollTo({
       top: 0,
@@ -90,7 +106,10 @@ function App() {
               <Route path="/feedback" element={<Feedback />} />
               <Route path="*" element={<Error />} />
             </Routes>
-            <div className="top" onClick={scrollTop}></div>
+            {
+              viewArrow && <div className="top" onClick={scrollTop}></div>
+            }
+
           </main>
           <Email />
           <Footer />

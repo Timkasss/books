@@ -19,13 +19,6 @@ function Education() {
       //swiper parameters
       const swiperParams = {
          modules: [Navigation, Pagination],
-         injectStyles: [
-            `
-            swiper-container::part(pagination) {
-        bottom:150px;
-             }
-            `,
-         ],
          slidesPerView: 4,
          spaceBetween: 20,
          breakpoints: {
@@ -74,10 +67,15 @@ function Education() {
                      type: 'fraction',
                      el: '.swiper-pagination',
                   }}
+                  injectStylesUrls={[
+                     'path/to/navigation-element.min.css',
+                     'path/to/pagination-element.min.css',
+                  ]}
                >
-                  <div className="swiper-navigation-wrapper" slot="container-start">
+                  <div className="swiper-navigation-wrapper">
                      <div className="swipper-button-next"></div>
                      <div className="swipper-button-prev"></div>
+                     <div className="swiper-pagination"></div>
                   </div>
                   {
                      slides.map(book => (

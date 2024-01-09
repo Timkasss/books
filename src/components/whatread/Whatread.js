@@ -22,7 +22,7 @@ function Whatread() {
                modules={[Navigation, Pagination]}
                pagination={{
                   type: 'fraction',
-                  clickable: true,
+                  //clickable: true,
                   el: '.swiper-pagination',
                }}
                navigation={{
@@ -30,25 +30,22 @@ function Whatread() {
                   prevEl: '.swiper-button-prev',
                }}
                slidesPerView={4}
+               slidesPerGroup={1}
                breakpoints={{
                   0: {
                      slidesPerView: 2,
-                     slidesPerGroup: 2,
                      spaceBetween: 10,
                   },
                   320: {
                      slidesPerView: 2,
-                     slidesPerGroup: 2,
                      spaceBetween: 10,
                   },
                   425: {
                      slidesPerView: 3,
-                     slidesPerGroup: 3,
                      spaceBetween: 10,
                   },
                   768: {
                      slidesPerView: 4,
-                     slidesPerGroup: 4,
                      spaceBetween: 20,
                   },
                }}
